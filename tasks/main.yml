@@ -1,0 +1,12 @@
+---
+# tasks file for ansible-role-qemu-guest-agent
+- name: Ensure qemu-guest-agent is installed
+  ansible.builtin.package:
+    name: qemu-guest-agent
+    state: present
+
+- name: Ensure qemu-guest-agent is enabled and running
+  ansible.builtin.service:
+    name: qemu-guest-agent
+    enabled: true
+    state: started
